@@ -1,0 +1,25 @@
+{
+  "name": "terranaut",
+  "version": "1.0.0",
+  "description": "Sandbox adventure game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "electron ."
+  },
+  "keywords": [
+    "terranaut"
+  ],
+  "author": "Isaiah Parton",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^10.1.2",
+    "electron-packager": "^15.1.0"
+  },
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "websocket": "^1.0.32",
+    "websocketserver": "^1.0.0",
+    "worker-farm": "^1.7.0"
+  }
+}

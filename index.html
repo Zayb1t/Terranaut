@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Terranaut</title>
+    <style>
+        @font-face {
+            font-family: "Terranaut";
+            src: url("./base/fonts/Terranaut.ttf");
+        }
+
+        body {
+            margin: 0px;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #game {
+            background: #0c0c0c;
+            position: fixed;
+            opacity: 0;
+            transition: opacity 1.5s;
+        }
+
+        #canvas {
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="game">
+        <canvas id="canvas"></canvas>
+    </div>
+
+    <script src="game/scripts/lib/require-jquery.js"></script>
+
+    <script>var $ = {};</script>
+
+    <script src="game/scripts/animation.js"></script>
+    <script src="game/scripts/audioclip.js"></script>
+    <script src="game/scripts/button.js"></script>
+    <script src="game/scripts/camera.js"></script>
+    <script src="game/scripts/chunk.js"></script>
+    <script src="game/scripts/game.js"></script>
+    <script src="game/scripts/graphics.js"></script>
+    <script src="game/scripts/inventory.js"></script>
+    <script src="game/scripts/item.js"></script>
+    <script src="game/scripts/loot.js"></script>
+    <script src="game/scripts/npc.js"></script>
+    <script src="game/scripts/object.js"></script>
+    <script src="game/scripts/particle.js"></script>
+    <script src="game/scripts/particleemitter.js"></script>
+    <script src="game/scripts/player.js"></script>
+    <script src="game/scripts/physics.js"></script>
+    <script src="game/scripts/text.js"></script>
+    <script src="game/scripts/tile.js"></script>
+    <script src="game/scripts/util.js"></script>
+    <script src="game/scripts/world.js"></script>
+    <script src="game/scripts/worldgenerator.js"></script>
+
+    <script src="base/scripts/npcTypes.js"></script>
+    <script src="base/scripts/tileTypes.js"></script>
+    <script src="base/scripts/itemTypes.js"></script>
+    <script src="base/scripts/objectTypes.js"></script>
+    <script src="base/scripts/sounds.js"></script>
+    <script src="base/scripts/fonts.js"></script>
+
+    <script>
+        var body = document.getElementById("game");
+
+        window.addEventListener('load', function () {
+            body.style.opacity = 1;
+        });
+
+        var game = new $.Game();
+        setInterval(function () {
+            game.update();
+            game.render();
+            game.resetInputs();
+        }, 1);
+    </script>
+</body>
+</html>
